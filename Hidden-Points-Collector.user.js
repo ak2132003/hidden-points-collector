@@ -2,7 +2,7 @@
 // @name         Hidden Points Collector by Dr. Ahmed Khaled
 // @namespace    http://tampermonkey.net/
 // @version      1.2
-// @description  سكريبت تجميع النقاط المخفية بتنفيذ مباشر وواجهة عصرية باسم د. أحمد خالد ✨
+// @description  سكريبت تجميع النقاط المخفية بتنفيذ مباشر وواجهة عصرية باسم د. أحمد خالد ✨ م
 // @author       Dr. Ahmed Khaled
 // @match        *://*.centurygames.com/*
 // @updateURL    https://raw.githubusercontent.com/ak2132003/hidden-points-collector/main/hidden-points-collector.user.js
