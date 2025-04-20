@@ -130,9 +130,9 @@
     panel.className = 'dr-ah-panel';
     panel.innerHTML = `
         <div class="dr-ah-close">×</div>
-        <h2>جمع كك النقاط بواسطة د. أحمد خالد</h2>
+        <h2>جمع النقاط بواسطة د. أحمد خالد</h2>
         <input type="number" id="dr-ah-count" placeholder="عدد التكرارات 🌀" />
-        <button id="dr-ah-start">ابدأ  سس الجمع الآن 🚀</button>
+        <button id="dr-ah-start">ابدأ الجمع الآن 🚀</button>
         <div class="dr-ah-progress"><div class="dr-ah-progress-bar" id="dr-ah-bar"></div></div>
         <div id="dr-ah-status" style="margin-top:8px; font-size:14px;"></div>
     `;
