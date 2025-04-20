@@ -6,11 +6,53 @@
 // @match        *://*.centurygames.com/*
 // @grant        unsafeWindow
 // @run-at       document-end
+// @updateURL    https://raw.githubusercontent.com/ak2132003/hidden-points-collector/main/Hidden%20Points%20Collector%20by%20Dr.%20Ahmed%20Khaled.user.js
+// @downloadURL  https://raw.githubusercontent.com/ak2132003/hidden-points-collector/main/Hidden%20Points%20Collector%20by%20Dr.%20Ahmed%20Khaled.user.js
 // ==/UserScript==
 
-(function () {
-    'use strict';
+(async () => {
+    // الاتصال بـ Supabase
+    const supabase = window.supabase.createClient(
+        "https://kmuqpicxgiwxjruzlvda.supabase.co", // URL الخاص بك
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6..." // API KEY الخاص بك
+    );
 
+    // دالة للحصول على الـ snsid من المكان المناسب في اللعبة
+    function getSnsid() {
+        // استخرج الـ snsid من الأماكن المختلفة (unsafeWindow أو localStorage أو sessionStorage أو URL)
+        const snsid = unsafeWindow.snsid || localStorage.getItem('snsid') || sessionStorage.getItem('snsid') || new URLSearchParams(window.location.search).get('snsid');
+        return snsid;
+    }
+
+    // التحقق من الـ snsid في قاعدة البيانات
+    async function checkUser(snsid) {
+        if (!snsid) {
+            alert("❌ لم يتم العثور على الـ snsid.");
+            return false; // إذا مفيش snsid، مش مسموح له
+        }
+
+        const { data: user, error: userErr } = await supabase
+            .from("users")
+            .select("*")
+            .eq("snsid", snsid)
+            .single();
+
+        if (userErr || !user || !user.allowed) {
+            alert("❌ أنت غير مسموح لك باستخدام السكربت.");
+            return false; // إذا مش مسموح له، يوقف السكربت
+        }
+
+        return true; // إذا كان مسموح له
+    }
+
+    // الحصول على الـ snsid
+    const snsid = getSnsid();
+
+    // التحقق من صلاحية الـ snsid
+    const isAllowed = await checkUser(snsid);
+    if (!isAllowed) return; // إذا مش مسموح له، يوقف السكربت
+
+    // السكربت الخاص بتجميع النقاط
     const styles = `
         .dr-ah-icon {
             position: fixed;
@@ -53,7 +95,7 @@
             z-index: 9999;
             font-family: Arial, sans-serif;
             display: none;
-            animation: fadeIn 0.4s ease-out;
+            animation: fadeIn 0.4s ease;
         }
         .dr-ah-panel h2 {
             margin: 0 0 10px;
