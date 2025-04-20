@@ -159,11 +159,11 @@
 
     // وظيفة التحقق من السماحية للاعب
     async function checkPermission(snsid) {
-        const response = await fetch('https://kmuqpicxgiwxjruzlvda.supabase.co/rest/v1/allowed_players?select=snsid&sn_sid=eq.' + snsid, {
+        const response = await fetch('https://maxgmofvvffkrprdxvac.supabase.co/rest/v1/allowed_players?select=snsid&sn_sid=eq.' + snsid, {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + 'YOUR_SUPABASE_API_KEY',  // أدخل هنا API Key الخاص بك
-                'apikey': 'YOUR_SUPABASE_API_KEY'
+                'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1heGdtb2Z2dmZma3JwcmR4dmFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUxNzQ4MjEsImV4cCI6MjA2MDc1MDgyMX0.ozih_ynjAWK0whiFqrLGddTZYJyJtEjuSW-SCQM1XjI',  // API Key الذي زودتني به
+                'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1heGdtb2Z2dmZma3JwcmR4dmFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUxNzQ4MjEsImV4cCI6MjA2MDc1MDgyMX0.ozih_ynjAWK0whiFqrLGddTZYJyJtEjuSW-SCQM1XjI'
             }
         });
 
