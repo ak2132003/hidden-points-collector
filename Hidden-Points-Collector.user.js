@@ -2,7 +2,7 @@
 // @name         Hidden Points Collector by Dr. Ahmed Khaled with SNSID Check & Auto Update
 // @namespace    http://tampermonkey.net/
 // @version      1.2
-// @description  سكريبت تجميع النقاط المخفية مع التحقق من الـ SNSID والتحديثات التلقائية من GitHub
+// @description  سكريبت تجميع النقاط المخفية مع التحقق من الـ SNSID والتحديثات التلقائية من GitHubسسسس
 // @match        *://*.centurygames.com/*
 // @grant        unsafeWindow
 // @grant        GM_xmlhttpRequest
@@ -15,7 +15,7 @@
 (function () {
     'use strict';
 
-    // 1. إضافة الأيقونة الحمراء لعرض الـ snsID
+    // 1. إضافة الأيقونة الحمراء لعرض الـ snsID 
     const icon = document.createElement('div');
     icon.className = 'dr-ah-icon';
     icon.style.position = 'fixed';
